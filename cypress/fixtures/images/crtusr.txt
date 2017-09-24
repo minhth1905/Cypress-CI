@@ -1,0 +1,22 @@
+#! /bin/bash
+
+data=`cat /home/minh-lilo/data/usr.txt`
+for user in $data
+do
+	check=`grep -c "^$user:" /etc/passwd`
+	if [ $check -eq 0  ]
+		then 
+		useradd $user -d /home/minh-lilo/data/$user
+		echo -e "Kiemtracuoiky2016\nKiemtracuoiky2016" | passwd $user
+		#passwd "Kiemtracuoiky2016"
+		if [ ! -d "/home/minh-lilo/data/$user" ]
+			then
+				mkdir /home/minh-lilo/data/$user
+				chown $user:$user /data/$user
+				chmod 700 /home/minh-lilo/data/$user
+			else
+				chown $user:$user /home/minh-lilo/data/$user
+				chmod 700 /home/minh-lilo/data/$user
+		fi
+	fi
+done
