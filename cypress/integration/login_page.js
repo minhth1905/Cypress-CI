@@ -5,7 +5,7 @@ describe('Kiểm thử trang login', function() {
       cy.visit('http://13.76.80.144/signin')
     })
 
-    it('Không điền email', function(){
+    it('test case 1', function(){
       cy.get('input[name=password]').type('password123{enter}')
 
       cy.get('.login-form')
