@@ -2,7 +2,7 @@ describe('Kiểm thử trang login', function() {
 
   context('Form login', function(){
     beforeEach(function(){
-      cy.visit('http://13.76.80.144/signin')
+      cy.visit('http://52.187.54.116/signin')
     })
 
     it('test case 1', function(){
